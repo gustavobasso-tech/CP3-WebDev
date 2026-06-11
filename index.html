@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP3 - Sistema de Cadastro de Jogos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <section id="secao-login" class="card">
+            <h2>Acesso ao Sistema</h2>
+            <form id="form-login" onsubmit="event.preventDefault();">
+                <div class="grupo-campo">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" id="usuario" placeholder="Digite o usuário">
+                </div>
+                <div class="grupo-campo">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Digite a senha">
+                </div>
+                <button type="button" onclick="executarLogin()">Entrar</button>
+            </form>
+            <div id="erro-login" class="mensagem-erro oculta"></div>
+        </section>
+
+        <section id="secao-dashboard" class="card oculta">
+            <header class="dashboard-header">
+                <h2>Meus Jogos Favoritos</h2>
+                <button id="btn-logout" onclick="executarLogout()">Sair</button>
+            </header>
+
+            <div class="form-cadastro">
+                <div class="grupo-campo">
+                    <input type="text" id="novo-item" placeholder="Nome do jogo...">
+                </div>
+                <div class="botoes-cadastro">
+                    <button type="button" onclick="adicionarAoInicio()">Adicionar no Início</button>
+                    <button type="button" onclick="adicionarAoFinal()">Adicionar no Final</button>
+                </div>
+                <div id="erro-cadastro" class="mensagem-erro oculta"></div>
+            </div>
+
+            <ul id="lista-itens">
+                </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
